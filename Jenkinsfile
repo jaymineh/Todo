@@ -22,9 +22,9 @@ pipeline {
              sh 'cat .env.sample'
              sh 'mv .env.sample .env'
              sh 'composer install'
-             sh 'php-7.4 artisan migrate'
-             sh 'php-7.4 artisan db:seed'
-             sh 'php-7.4 artisan key:generate'
+             sh 'php7.4 artisan migrate'
+             sh 'php7.4 artisan db:seed'
+             sh 'php7.4 artisan key:generate'
       }
     }
   }
