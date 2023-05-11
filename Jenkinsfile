@@ -57,5 +57,11 @@ pipeline {
 
       }
     }
+      
+     stage('Package Artifact') {
+      steps {
+            sh 'zip -qr todophp.zip ${WORKSPACE}/*'
+      }
+    }
   }
 }
