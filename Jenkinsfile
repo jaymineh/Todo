@@ -27,5 +27,17 @@ pipeline {
              sh 'php7.4 artisan key:generate'
       }
     }
+      
+    stage('Execute Unit Tests') {
+      steps {
+             sh './vendor/bin/phpunit'
+      } 
+    }
+      
+    stage('Code Analysis') {
+      steps {
+        sh 'phploc app/ --log-csv build/logs/phploc.csv'
+      }
+    }
   }
 }
